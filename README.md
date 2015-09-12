@@ -19,38 +19,38 @@ I intend to provide a simple, object oriented interface to the output format to 
 
 Clone the repo:
 
-   git clone git@github.com:jaabell/postRealESSI.git
+    git clone git@github.com:jaabell/postRealESSI.git
 
 Install the module
 
-   cd postRealESSI
-   python setup.py build
-   sudo setup.py install
+    cd postRealESSI
+    python setup.py build
+    sudo setup.py install
    
 ## Using postRealESSI
 
 The following example shows how to use postRealESSI to plot the time response of a node.
 
-   # Import the module
-  import postRealESSI
-  
-  # Open a model output file
-  essi_model = postRealESSI.open_essi_output_file("mymodel_stage.h5.feioutput")
-  
-  # Get time vector
-  t = essi_model.getTime()
-  
-  # Get nodal displacements for node with tag 1
-  node1 = essi_model.getNode(1)
-  displacements = node1.get_generalized_displacements()
-  
-  # Plot using matplotlib
-  import matplolib.pyplt as plt
-  plt.figure()
-  plt.plot(t,displacements[0,:], label="ux")
-  plt.plot(t,displacements[1,:], label="uy")
-  plt.plot(t,displacements[2,:], label="uz")
-  plt.xlabel("Time [s]")
-  plt.ylabel("Displacements [m]")
-  plt.legend()
+    # Import the module
+    import postRealESSI
+
+    # Open a model output file
+    essi_model = postRealESSI.open_essi_output_file("mymodel_stage.h5.feioutput")
+
+    # Get time vector
+    t = essi_model.getTime()
+
+    # Get nodal displacements for node with tag 1
+    node1 = essi_model.getNode(1)
+    displacements = node1.get_generalized_displacements()
+
+    # Plot using matplotlib
+    import matplolib.pyplt as plt
+    plt.figure()
+    plt.plot(t,displacements[0,:], label="ux")
+    plt.plot(t,displacements[1,:], label="uy")
+    plt.plot(t,displacements[2,:], label="uz")
+    plt.xlabel("Time [s]")
+    plt.ylabel("Displacements [m]")
+    plt.legend()
   
