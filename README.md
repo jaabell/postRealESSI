@@ -31,7 +31,7 @@ Install the module
 
 The following example shows how to use postRealESSI to plot the time response of a node.
 
-  # Import the module
+   # Import the module
   import postRealESSI
   
   # Open a model output file
